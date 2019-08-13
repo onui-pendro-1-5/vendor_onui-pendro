@@ -13,13 +13,14 @@ CUSTOM_PLATFORM_VERSION := 9.0
 
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(CUSTOM_BUILD))
 
-CUSTOM_VERSION := PixelExperience_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
-CUSTOM_VERSION_PROP := Pie
-ROM_FINGERPRINT := PixelExperience/$(CUSTOM_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(CUSTOM_BUILD_DATE)
+ONUI_PENDRO_VERSION := OnUI-Pendro-1.5_$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)
+CUSTOM_VERSION_PROP := 1.5
+ROM_FINGERPRINT := OnUI-Pendro-1.5/$(CUSTOM_PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(CUSTOM_BUILD_DATE)
 
 CUSTOM_PROPERTIES := \
-    org.pixelexperience.version=$(CUSTOM_VERSION_PROP) \
-    org.pixelexperience.build_date=$(CUSTOM_BUILD_DATE) \
-    org.pixelexperience.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
-    org.pixelexperience.build_type=$(CUSTOM_BUILD_TYPE) \
-    org.pixelexperience.fingerprint=$(ROM_FINGERPRINT)
+    org.onui-pendro.version=$(CUSTOM_VERSION_PROP) \
+    org.onui-pendro.build_date=$(CUSTOM_BUILD_DATE) \
+    org.onui-pendro.build_date_utc=$(CUSTOM_BUILD_DATE_UTC) \
+    org.onui-pendro.releasetype=$(CUSTOM_BUILD_TYPE) \
+    org.onui-pendro.fingerprint=$(ROM_FINGERPRINT) \
+    ro.lineage.version=$(CUSTOM_BUILD)-$(CUSTOM_PLATFORM_VERSION)-$(CUSTOM_BUILD_DATE)-$(CUSTOM_BUILD_TYPE)

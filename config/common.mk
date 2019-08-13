@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= PixelExperience
+PRODUCT_BRAND ?= OnUI-Pendro-1.5
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -148,8 +148,8 @@ include vendor/aosp/config/ota.mk
 # GApps
 include vendor/gapps/config.mk
 
-# Pixel Style
-include vendor/pixelstyle/config.mk
+# OnUI-Pendro Style
+include vendor/onuistyle/config.mk
 
 # Themes
 include vendor/themes/config.mk

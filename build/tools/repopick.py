@@ -154,12 +154,12 @@ def fetch_query(remote_url, query):
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
 
 if __name__ == '__main__':
-    # Default to PixelExperience Gerrit
-    default_gerrit = 'https://gerrit.pixelexperience.org'
+    # Default to OnUI-Pendro github
+    default_github = 'https://github.com/onui-pendro-1-5'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
-        patches from PixelExperience's Gerrit instance (or any gerrit instance of your choosing)
+        patches from OnUI-Pendroi Github instance (or any github instance of your choosing)
 
         Given a list of change numbers, repopick will cd into the project path
         and cherry pick the latest patch available.

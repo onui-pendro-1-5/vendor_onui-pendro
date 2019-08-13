@@ -14,7 +14,7 @@ except:
     urllib.parse = urlparse
     urllib.request = urllib2
 try:
-    url = "https://raw.githubusercontent.com/PixelExperience/official_devices/master/devices.json"
+    url = "https://raw.githubusercontent.com/onui-pendro-1-5/official_devices/master/devices.json"
     response = urllib.request.urlopen(url)
     data = json.loads(response.read())
     for res in data:
