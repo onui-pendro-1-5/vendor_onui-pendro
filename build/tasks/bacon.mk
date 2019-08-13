@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(ONUI-PENDRO_VERSION).zip
+ONUI-PENDRO_TARGET_PACKAGE := $(PRODUCT_OUT)/$(ONUI-PENDRO_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
