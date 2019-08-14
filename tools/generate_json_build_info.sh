@@ -1,11 +1,14 @@
 #!/bin/sh
 if [ "$1" ]
 then
+  datetime=$(grep org\.onui-pendro\.build_date_utc $OUT/system/build.prop | cut -d= -f2)
+  romtype=$CUSTOM_BUILD_TYPE\
+  url=https://sourceforge.net/projects/onui-pendro-1-5/files/$CUSTOM_BUILD/$(basename $(ls $OUT/OnUI-Pendro*.zip))\
+  version=$(grep -m1 org\.onui-pendro\.version $OUT/system/build.prop | cut -d= -f2)\
   file_path=$1
-  file_name=$(basename "$file_path")
+  filename=$(basename "$file_path")
   if [ -f $file_path ]; then
-    file_size=$(stat --printf="%s" "$file_path")
-    md5=$(cat "$file_path.md5sum" | cut -d' ' -f1)
-    echo "{\n   \"file_name\": \"$file_name\",\n   \"file_size\": $file_size,\n   \"md5\": \"$md5\"\n}" > $file_path.json
+    id=$(cat "$file_path.md5sum" | cut -d' ' -f1)
+    echo "{\n   \"datetime\": \"$datetime\",\n   \"filename\": \"$filename\",\n   \"id\": \"$id\",\n   \"romtype\": \"$romtype\",\n   \"size\": $(stat -c%s $OUT/OnUI-Pendro*.zip),\n   \"url\": \"$url\",\n   \"version\": \"$version\"\n}" > $file_path.json
   fi
 fi
