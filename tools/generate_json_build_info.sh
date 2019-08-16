@@ -9,6 +9,6 @@ then
   filename=$(basename "$file_path")
   if [ -f $file_path ]; then
     id=$(cat "$file_path.md5sum" | cut -d' ' -f1)
-    echo "{\n   \"datetime\": \"$datetime\",\n   \"filename\": \"$filename\",\n   \"id\": \"$id\",\n   \"romtype\": \"$romtype\",\n   \"size\": $(stat -c%s $OUT/OnUI-Pendro*.zip),\n   \"url\": \"$url\",\n   \"version\": \"$version\"\n}" > $file_path.json
+    echo "{\n\"response\": [\n{\n   \"datetime\": \"$datetime\",\n   \"filename\": \"$filename\",\n   \"id\": \"$id\",\n   \"romtype\": \"$romtype\",\n   \"size\": $(stat -c%s $OUT/OnUI-Pendro*.zip),\n   \"url\": \"$url\",\n   \"version\": \"$version\"\n}\n]\n}" > $file_path.json	
   fi
 fi
