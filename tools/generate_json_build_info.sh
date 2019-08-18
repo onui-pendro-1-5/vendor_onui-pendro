@@ -3,7 +3,7 @@ if [ "$1" ]
 then
   datetime=$(grep org\.onui-pendro\.build_date_utc $OUT/system/build.prop | cut -d= -f2)
   romtype=$CUSTOM_BUILD_TYPE\
-  url=https://sourceforge.net/projects/onui-pendro-1-5/files/$CUSTOM_BUILD/$(basename $(ls $OUT/OnUI-Pendro*.zip))\
+  url=https://gitlab.com/onui-pendro-1.5_downloads/$CUSTOM_BUILD/raw/master/$(basename $(ls $OUT/OnUI-Pendro*.zip))\
   version=$(grep -m1 org\.onui-pendro\.version $OUT/system/build.prop | cut -d= -f2)\
   file_path=$1
   filename=$(basename "$file_path")
